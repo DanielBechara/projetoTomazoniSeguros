@@ -1,0 +1,179 @@
+* {
+    font-family: "Inter";
+    margin: 0;
+}
+
+body {
+    padding-top: 60px;
+}
+
+.imgLogo {
+    max-width: 200px;
+    cursor: pointer;
+}
+
+.imgFundo {
+    display: block;
+    width: 100%;
+    height: auto;
+    width: 100%;
+    /* fade de 70% até 100% da altura */
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    background-color: #000000;
+}
+
+.menu-fixo {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100% - 40px);
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.menu-direita {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    font-size: 14px;
+    color: #000000;
+    font-family: inherit;
+    cursor: pointer;
+    position: relative;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: color;
+    font-variation-settings: "wght" 300;
+    transition: font-variation-settings 0.4s ease;
+}
+
+.btn:focus,
+.btn:hover {
+    color: #000000;
+    font-variation-settings: "wght" 600;
+}
+
+.btn:focus:after,
+.btn:hover:after {
+    width: 100%;
+    left: 0%;
+}
+
+.btn:after {
+    content: "";
+    pointer-events: none;
+    bottom: -2px;
+    left: 50%;
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #000000;
+    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition-duration: 400ms;
+    transition-property: width, left;
+}
+
+
+/* ========== Seção “Sobre a Empresa” ========== */
+.sobre {
+  padding: 80px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.sobre-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Texto */
+.sobre-texto {
+  flex: 1;
+  border-right: 1px solid #444;
+  padding-right: 40px;
+}
+
+.titulo-pequeno {
+  display: block;
+  font-size: 0.9rem;
+  font-variation-settings: "wght" 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.titulo-grande {
+  font-size: 2rem;
+  font-variation-settings: "wght" 300;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Imagem */
+.sobre-imagem {
+  flex: 1;
+  text-align: right;
+}
+
+.sobre-imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+/* ————— Scroll Reveal ————— */
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-element.from-left {
+  transform: translateX(-100px) translateY(30px);
+}
+.fade-in-element.from-right {
+  transform: translateX(100px) translateY(30px);
+}
+.fade-in-element.in-view {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* ————— Parallax Simples ————— */
+.sobre-imagem img {
+  display: block;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+/* Responsivo (mobile) */
+@media (max-width: 768px) {
+  .sobre-conteudo {
+    flex-direction: column;
+  }
+  .sobre-texto {
+    border: none;
+    padding: 0;
+    text-align: center;
+  }
+  .sobre-imagem {
+    text-align: center;
+    margin-top: 20px;
+  }
+}

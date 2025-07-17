@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomazoni Seguros</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-fixo">
+        <script src="funcionalidades.js"></script>
+        <img id="logo" src="./imagens/logosCom1Nome.png" class="imgLogo" alt="logoTomazoni"
+            onclick="scrollParaElementoPorId('logo')" />
+        <div class="menu-direita">
+            <button type="button" class="btn" onclick="scrollParaElementoPorId('sobre')">Sobre a Empresa</button>
+            <button type="button" class="btn" onclick="scrollParaElementoPorId('servicos')">Serviços</button>
+            <button type="button" class="btn" onclick="scrollParaElementoPorId('contatos')">Contatar</button>
+        </div>
+    </div>
+    <img src="./imagens/frenteEmpresa.png" class="imgFundo" alt="entradaEmpresa">
+    <section id="sobre" class="sobre">
+  <div class="sobre-conteudo">
+    <div class="sobre-texto fade-in-element from-left">
+      <span class="titulo-pequeno">HISTÓRIA</span>
+      <h2 class="titulo-grande">25 Anos de Proteção</h2>
+      <p>
+        Em março de 2000, Deoni e Veronice iniciaram a Tomazoni Seguros na cidade de Tangará da Serra, 
+        começando a atender a cidade em uma sala emprestada no coração do comércio local. 
+        Hoje a empresa conta com uma sede própria e com uma equipe de 13 pessoas, atendendo o Brasil todo 
+        em mais de 20 ramos securitários, com equipes altamente especializadas em automóvel, equipamentos, 
+        patrimonial, vida e previdência.
+      </p>
+    </div>
+    <div class="sobre-imagem fade-in-element from-right">
+      <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni em frente à sede">
+    </div>
+  </div>
+</section>
+    <section id="servicos" style="height: 300px;"></section>
+    <section id="contatos" style="height: 300px;"></section>
+</body>
+
+</html>
