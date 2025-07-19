@@ -1,3 +1,230 @@
+/* ========== Card Horizontal de Serviços (UX aprimorado) ========== */
+.servicos-card-horizontal {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 36px;
+  background: linear-gradient(90deg, #f7f7f7 60%, #e9f0fa 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.07);
+  padding: 36px 28px;
+  align-items: stretch;
+  overflow-x: visible;
+}
+
+/* Card de serviço com fluidez na sobreposição */
+.servico-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+  padding: 24px 20px 18px 20px;
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0;
+  transition: box-shadow 0.35s cubic-bezier(.4,1.6,.6,1),
+              transform 0.35s cubic-bezier(.4,1.6,.6,1),
+              border-color 0.25s;
+  border: 1.5px solid #e3e8ee;
+  position: relative;
+  z-index: 1;
+}
+.servico-card:hover {
+  box-shadow: 0 16px 48px 0 rgba(58,123,213,0.18), 0 2px 12px 0 rgba(0,0,0,0.06);
+  transform: translateY(-14px) scale(1.045);
+  border-color: #3a7bd5;
+  z-index: 10;
+}
+.servico-card h4 {
+  font-size: 1.18rem;
+  font-variation-settings: "wght" 700;
+  margin-bottom: 12px;
+  color: #1a3a5d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.servico-card h4::before {
+  content: "\1F512";
+  font-size: 1.1em;
+  margin-right: 4px;
+  opacity: 0.7;
+}
+.servico-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+.servico-card li {
+  font-size: 1rem;
+  margin-bottom: 7px;
+  padding-left: 0.7em;
+  position: relative;
+  color: #222;
+}
+.servico-card li::before {
+  content: "\2022";
+  color: #3a7bd5;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+@media (max-width: 900px) {
+  .servicos-card-horizontal {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px 6px;
+  }
+  .servico-card {
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .servico-card h4 {
+    justify-content: center;
+  }
+}
+
+/* Efeito de surgimento para card horizontal */
+.fade-in-element.from-bottom {
+  transform: translateY(100px);
+}
+/* ========== Card Horizontal de Serviços ========== */
+.servicos-card-horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  margin-top: 32px;
+  background: #f7f7f7;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.06);
+  padding: 32px 24px;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow-x: auto;
+}
+
+
+@media (max-width: 900px) {
+  .servicos-card-horizontal {
+    flex-direction: column;
+    gap: 18px;
+    padding: 18px 6px;
+  }
+  .servico-card {
+    min-width: 0;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Efeito de surgimento para card horizontal */
+.fade-in-element.from-bottom {
+  transform: translateY(100px);
+}
+/* ========== Seção “Serviços” ========== */
+.servicos {
+  padding: 80px 20px;
+  background-color: #fff;
+  color: #000;
+}
+
+.servicos-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.servicos-texto {
+  flex: 1 1 350px;
+  padding-right: 40px;
+  min-width: 300px;
+}
+
+.servicos-listas {
+  flex: 2 1 600px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: flex-start;
+}
+
+.servicos-coluna {
+  min-width: 220px;
+  flex: 1 1 220px;
+}
+
+.servicos-coluna h4 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-variation-settings: "wght" 700;
+}
+
+.servicos-coluna ul {
+  list-style: disc inside;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.servicos-coluna li {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.servicos .titulo-pequeno {
+  color: #222;
+  font-size: 0.9rem;
+  font-variation-settings: "wght" 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.servicos .titulo-grande {
+  font-size: 2rem;
+  font-variation-settings: "wght" 300;
+  margin-bottom: 20px;
+}
+
+.servicos .titulo-medio {
+  font-size: 1.3rem;
+  font-variation-settings: "wght" 500;
+  margin-bottom: 10px;
+}
+
+.servicos .descricao {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .servicos-conteudo {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .servicos-texto {
+    border: none;
+    padding: 0;
+    text-align: center;
+  }
+  .servicos-listas {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .servicos-coluna {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
 * {
     font-family: "Inter";
     margin: 0;

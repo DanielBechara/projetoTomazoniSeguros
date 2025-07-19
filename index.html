@@ -2,49 +2,105 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tomazoni Seguros</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tomazoni Seguros</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-    <div class="menu-fixo">
-        <script src="funcionalidades.js"></script>
-        <img id="logo" src="./imagens/logosCom1Nome.png" class="imgLogo" alt="logoTomazoni"
-            onclick="scrollParaElementoPorId('logo')" />
-        <div class="menu-direita">
-            <button type="button" class="btn" onclick="scrollParaElementoPorId('sobre')">Sobre a Empresa</button>
-            <button type="button" class="btn" onclick="scrollParaElementoPorId('servicos')">Serviços</button>
-            <button type="button" class="btn" onclick="scrollParaElementoPorId('contatos')">Contatar</button>
-        </div>
-    </div>
-    <img src="./imagens/frenteEmpresa.png" class="imgFundo" alt="entradaEmpresa">
-    <section id="sobre" class="sobre">
-  <div class="sobre-conteudo">
-    <div class="sobre-texto fade-in-element from-left">
-      <span class="titulo-pequeno">HISTÓRIA</span>
-      <h2 class="titulo-grande">25 Anos de Proteção</h2>
-      <p>
-        Em março de 2000, Deoni e Veronice iniciaram a Tomazoni Seguros na cidade de Tangará da Serra, 
-        começando a atender a cidade em uma sala emprestada no coração do comércio local. 
-        Hoje a empresa conta com uma sede própria e com uma equipe de 13 pessoas, atendendo o Brasil todo 
-        em mais de 20 ramos securitários, com equipes altamente especializadas em automóvel, equipamentos, 
-        patrimonial, vida e previdência.
-      </p>
-    </div>
-    <div class="sobre-imagem fade-in-element from-right">
-      <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni em frente à sede">
+  <div class="menu-fixo">
+    <script src="funcionalidades.js"></script>
+    <img id="logo" src="./imagens/logosCom1Nome.png" class="imgLogo" alt="logoTomazoni"
+      onclick="scrollParaElementoPorId('logo')" />
+    <div class="menu-direita">
+      <button type="button" class="btn" onclick="scrollParaElementoPorId('sobre')">Sobre a Empresa</button>
+      <button type="button" class="btn" onclick="scrollParaElementoPorId('servicos')">Serviços</button>
+      <button type="button" class="btn" onclick="scrollParaElementoPorId('contatos')">Contatar</button>
     </div>
   </div>
-</section>
-    <section id="servicos" style="height: 300px;"></section>
-    <section id="contatos" style="height: 300px;"></section>
+  <img src="./imagens/frenteEmpresa.png" class="imgFundo" alt="entradaEmpresa">
+  <section id="sobre" class="sobre">
+    <div class="sobre-conteudo">
+      <div class="sobre-texto fade-in-element from-left">
+        <span class="titulo-pequeno">HISTÓRIA</span>
+        <h2 class="titulo-grande">25 Anos de Proteção</h2>
+        <p>
+          Em março de 2000, Deoni e Veronice iniciaram a Tomazoni Seguros na cidade de Tangará da Serra,
+          começando a atender a cidade em uma sala emprestada no coração do comércio local.
+          Hoje a empresa conta com uma sede própria e com uma equipe de 13 pessoas, atendendo o Brasil todo
+          em mais de 20 ramos securitários, com equipes altamente especializadas em automóvel, equipamentos,
+          patrimonial, vida e previdência.
+        </p>
+      </div>
+      <div class="sobre-imagem fade-in-element from-right">
+        <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni em frente à sede">
+      </div>
+    </div>
+  </section>
+  <section id="servicos" class="servicos">
+    <div class="servicos-conteudo">
+      <div class="servicos-texto fade-in-element from-left">
+        <span class="titulo-pequeno">SERVIÇOS</span>
+        <h2 class="titulo-grande">Nossos Serviços estão disponíveis para todo o Brasil</h2>
+        <h3 class="titulo-medio">RAMOS DE ATUAÇÃO</h3>
+        <p class="descricao">
+          Na Tomazoni Seguros atuamos nas mais diversas áreas para atender uma vasta gama de necessidades e trazer segurança em todos os âmbitos do seu dia a dia.
+        </p>
+      </div>
+      <div class="servicos-card-horizontal fade-in-element from-bottom">
+        <div class="servico-card">
+          <h4>Proteção para Veículos e Transporte</h4>
+          <ul>
+            <li>Seguro Auto</li>
+            <li>Seguro de Moto</li>
+            <li>Seguro de Caminhão</li>
+            <li>Seguro Frotista</li>
+            <li>Seguro Transporte</li>
+            <li>Seguro de Aeronave</li>
+            <li>Seguro de Aeroporto</li>
+          </ul>
+        </div>
+        <div class="servico-card">
+          <h4>Proteção para Equipamentos</h4>
+          <ul>
+            <li>Seguro de Equipamentos Agrícolas</li>
+            <li>Seguro de Equipamentos de Construção Civil</li>
+            <li>Seguro de Equipamentos de Saúde</li>
+            <li>Seguro de Equipamentos Portáteis</li>
+          </ul>
+        </div>
+        <div class="servico-card">
+          <h4>Proteção Patrimonial</h4>
+          <ul>
+            <li>Seguro Empresarial</li>
+            <li>Seguro Residencial</li>
+            <li>Seguro de Condomínio</li>
+            <li>Seguro de Propriedade Rural</li>
+            <li>Seguro de Lavoura</li>
+          </ul>
+        </div>
+        <div class="servico-card">
+          <h4>Seguros para Pessoas</h4>
+          <ul>
+            <li>Seguro Saúde</li>
+            <li>Seguro de Vida</li>
+            <li>Seguro Sucessório</li>
+            <li>Previdência Privada</li>
+            <li>Seguro de Responsabilidade Civil</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contatos" style="height: 300px;">
+
+  </section>
 </body>
 
 </html>
