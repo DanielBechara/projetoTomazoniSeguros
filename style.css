@@ -244,9 +244,9 @@ body {
     width: 100%;
     height: auto;
     width: 100%;
-    /* fade de 70% até 100% da altura */
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    /* gradiente preto para transparente de 70% até 100% da altura */
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to bottom, #000 70%, rgba(0,0,0,0) 100%);
     background-color: #000000;
 }
 
@@ -316,8 +316,8 @@ body {
 /* ========== Seção “Sobre a Empresa” ========== */
 .sobre {
   padding: 80px 20px;
-  background-color: #000;
-  color: #fff;
+  color: #000;
+  background-color: #fff;
 }
 
 .sobre-conteudo {
@@ -328,11 +328,20 @@ body {
   gap: 40px;
 }
 
+#historia {
+  margin-bottom: 60px;
+}
+
 /* Texto */
 .sobre-texto {
   flex: 1;
   border-right: 1px solid #444;
   padding-right: 40px;
+}
+.equipe-texto {
+  flex: 1;
+  border-left: 1px solid #444;
+  padding-left: 40px;
 }
 
 .titulo-pequeno {

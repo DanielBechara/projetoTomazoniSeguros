@@ -15,7 +15,6 @@
 
 <body>
   <div class="menu-fixo">
-    <script src="funcionalidades.js"></script>
     <img id="logo" src="./imagens/logosCom1Nome.png" class="imgLogo" alt="logoTomazoni"
       onclick="scrollParaElementoPorId('logo')" />
     <div class="menu-direita">
@@ -26,22 +25,44 @@
   </div>
   <img src="./imagens/frenteEmpresa.png" class="imgFundo" alt="entradaEmpresa">
   <section id="sobre" class="sobre">
-    <div class="sobre-conteudo">
-      <div class="sobre-texto fade-in-element from-left">
-        <span class="titulo-pequeno">HISTÓRIA</span>
-        <h2 class="titulo-grande">25 Anos de Proteção</h2>
-        <p>
-          Em março de 2000, Deoni e Veronice iniciaram a Tomazoni Seguros na cidade de Tangará da Serra,
-          começando a atender a cidade em uma sala emprestada no coração do comércio local.
-          Hoje a empresa conta com uma sede própria e com uma equipe de 13 pessoas, atendendo o Brasil todo
-          em mais de 20 ramos securitários, com equipes altamente especializadas em automóvel, equipamentos,
-          patrimonial, vida e previdência.
-        </p>
+    <section id="historia">
+      <div class="sobre-conteudo">
+        <div class="sobre-texto fade-in-element from-left">
+          <span class="titulo-pequeno">HISTÓRIA</span>
+          <h2 class="titulo-grande"><span id="anos"></span> Anos de Proteção</h2>
+          <p>
+            Em março de 2000, Deoni e Veronice iniciaram a Tomazoni Seguros na cidade de Tangará da Serra,
+            começando a atender a cidade em uma sala emprestada no coração do comércio local.
+            Hoje a empresa conta com uma sede própria e com uma equipe de 13 pessoas, atendendo o Brasil todo
+            em mais de 20 ramos securitários, com equipes altamente especializadas em automóvel, equipamentos,
+            patrimonial, vida e previdência.
+          </p>
+        </div>
+        <div class="sobre-imagem fade-in-element from-right">
+          <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni em frente à sede">
+        </div>
       </div>
-      <div class="sobre-imagem fade-in-element from-right">
-        <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni em frente à sede">
+    </section>
+    <section id="equipe">
+      <div class="sobre-conteudo">
+        <div class="sobre-imagem fade-in-element from-left">
+          <img src="./imagens/equipe.jpg" alt="Equipe Tomazoni Seguros">
+        </div>
+
+        <div class="equipe-texto fade-in-element from-right">
+          <span class="titulo-pequeno">EQUIPE</span>
+          <h2 class="titulo-grande">Nossa Equipe</h2>
+          <p>
+            Contamos com uma equipe de profissionais altamente qualificados e dedicados, prontos para oferecer o melhor
+            atendimento e soluções personalizadas em seguros. Nosso time está sempre em busca de atualização e
+            excelência para garantir a sua segurança e tranquilidade.
+          </p>
+        </div>
       </div>
-    </div>
+    </section>
+    <section id="capacidades">
+
+    </section>
   </section>
   <section id="servicos" class="servicos">
     <div class="servicos-conteudo">
@@ -50,7 +71,8 @@
         <h2 class="titulo-grande">Nossos Serviços estão disponíveis para todo o Brasil</h2>
         <h3 class="titulo-medio">RAMOS DE ATUAÇÃO</h3>
         <p class="descricao">
-          Na Tomazoni Seguros atuamos nas mais diversas áreas para atender uma vasta gama de necessidades e trazer segurança em todos os âmbitos do seu dia a dia.
+          Na Tomazoni Seguros atuamos nas mais diversas áreas para atender uma vasta gama de necessidades e trazer
+          segurança em todos os âmbitos do seu dia a dia.
         </p>
       </div>
       <div class="servicos-card-horizontal fade-in-element from-bottom">
@@ -67,12 +89,13 @@
           </ul>
         </div>
         <div class="servico-card">
-          <h4>Proteção para Equipamentos</h4>
+          <h4>Seguros para Pessoas</h4>
           <ul>
-            <li>Seguro de Equipamentos Agrícolas</li>
-            <li>Seguro de Equipamentos de Construção Civil</li>
-            <li>Seguro de Equipamentos de Saúde</li>
-            <li>Seguro de Equipamentos Portáteis</li>
+            <li>Seguro Saúde</li>
+            <li>Seguro de Vida</li>
+            <li>Seguro Sucessório</li>
+            <li>Previdência Privada</li>
+            <li>Seguro de Responsabilidade Civil</li>
           </ul>
         </div>
         <div class="servico-card">
@@ -86,21 +109,31 @@
           </ul>
         </div>
         <div class="servico-card">
-          <h4>Seguros para Pessoas</h4>
+          <h4>Proteção para Equipamentos</h4>
           <ul>
-            <li>Seguro Saúde</li>
-            <li>Seguro de Vida</li>
-            <li>Seguro Sucessório</li>
-            <li>Previdência Privada</li>
-            <li>Seguro de Responsabilidade Civil</li>
+            <li>Seguro de Equipamentos Agrícolas</li>
+            <li>Seguro de Equipamentos de Construção Civil</li>
+            <li>Seguro de Equipamentos de Saúde</li>
+            <li>Seguro de Equipamentos Portáteis</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
-  <section id="contatos" style="height: 300px;">
+  <section id="diferencial">
 
   </section>
+  <section id="seguradoras">
+
+  </section>
+  <section id="frase">
+
+  </section>
+  <section id="contatos">
+
+  </section>
+
+  <script src="funcionalidades.js"></script>
 </body>
 
 </html>
