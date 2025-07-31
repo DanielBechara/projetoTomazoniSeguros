@@ -48,3 +48,12 @@ function definirIdade() {
     idade.textContent = anos;
   }
 }
+
+// window.addEventListener('scroll', () => {
+//   const scrolled = window.pageYOffset;
+//   const speed = 0.2; // 0.1 = 10% da velocidade do scroll, etc.
+//   const bg = document.querySelector('.parallax-bg');
+//   if (bg) {
+//     bg.style.transform = `translate(-50%, ${scrolled * speed}px)`;
+//   }
+// });
