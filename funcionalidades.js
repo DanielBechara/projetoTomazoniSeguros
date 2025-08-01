@@ -49,11 +49,46 @@ function definirIdade() {
   }
 }
 
-// window.addEventListener('scroll', () => {
-//   const scrolled = window.pageYOffset;
-//   const speed = 0.2; // 0.1 = 10% da velocidade do scroll, etc.
-//   const bg = document.querySelector('.parallax-bg');
-//   if (bg) {
-//     bg.style.transform = `translate(-50%, ${scrolled * speed}px)`;
-//   }
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  const cardsContainer = document.getElementById('cards-seguradoras');
+  if (!cardsContainer) return; // sai se não houver a seção
+
+  const itemsSeg = Array.from(cardsContainer.children);
+  let currentSeg = 0;
+  const totalSeg = itemsSeg.length;
+  const gapSeg = parseInt(
+    getComputedStyle(document.documentElement)
+      .getPropertyValue('--seg-gap')
+  );
+
+  function renderSeg() {
+    itemsSeg.forEach((card, i) => {
+      let offset = i - currentSeg;
+      if (offset < -totalSeg/2) offset += totalSeg;
+      if (offset >  totalSeg/2) offset -= totalSeg;
+
+      const x = offset * gapSeg;
+      const isActive = i === currentSeg;
+      const scale = isActive ? 1.2 : 1;
+      const opacity = isActive ? 1 : 0.6;
+      const zIndex = totalSeg - Math.abs(offset);
+
+      card.style.transform = `translateX(${x}px) scale(${scale})`;
+      card.style.opacity   = opacity;
+      card.style.zIndex    = zIndex;
+    });
+  }
+
+  document.getElementById('prevSeg').addEventListener('click', () => {
+    currentSeg = (currentSeg - 1 + totalSeg) % totalSeg;
+    renderSeg();
+  });
+
+  document.getElementById('nextSeg').addEventListener('click', () => {
+    currentSeg = (currentSeg + 1) % totalSeg;
+    renderSeg();
+  });
+
+  // renderiza na primeira exibição
+  renderSeg();
+});
