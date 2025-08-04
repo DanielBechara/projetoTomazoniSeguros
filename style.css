@@ -523,65 +523,120 @@ body {
   }
 }
 
+
+
+/* ========== Carrossel de Cards de Serviços ========== */
+/* Variáveis globais */
 :root {
-  /* ajustáveis: largura/altura do card e gap entre eles */
-  --seg-card-width: 150px;
-  --seg-card-height: 100px;
-  --seg-gap: 180px;
+  --color-purple: #8B5CF6;
+  --color-pink:   #EC4899;
+  --color-gray:   #9CA3AF;
+  --color-black:  #1F2937;
+  --card-size:    23rem;
 }
 
-.carousel {
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-image: linear-gradient(45deg, var(--color-purple), var(--color-pink));
+} */
+
+/* Estilos específicos da seção seguradoras */
+#seguradoras {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: #000;
+}
+
+#seguradoras h1 {
+  margin-bottom: 2rem;
+}
+
+/* Container 3D */
+#seguradoras .carousel {
   position: relative;
+  width: var(--card-size);
+  height: var(--card-size);
+  perspective: 500px;
+  transform-style: preserve-3d;
+}
+
+/* Cada cartão */
+#seguradoras .card-container {
+  position: absolute;
   width: 100%;
-  max-width: 900px;
-  height: calc(var(--seg-card-height) * 1.2);
-  margin: 2rem auto;
-  overflow: hidden;
+  height: 100%;
+  transform:
+    rotateY(calc(var(--offset) * 50deg))
+    scaleY(calc(1 + var(--abs-offset) * -0.4))
+    translateZ(calc(var(--abs-offset) * -30rem))
+    translateX(calc(var(--direction) * -5rem));
+  filter: blur(calc(var(--abs-offset) * 1rem));
+  transition: all 0.3s ease-out;
+
+  pointer-events: var(--pointer-events);
+  opacity:        var(--opacity);
+  display:        var(--display);
 }
 
-.cards {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  list-style: none;
-  padding: 0; margin: 0;
+/* Aparência do cartão */
+#seguradoras .card {
+  width: 82%;
+  height: 82%;
+  padding: 2rem;
+  background-color: hsl(280deg, 40%, calc(100% - var(--abs-offset) * 50%));
+  border-radius: 1rem;
+  color: var(--color-gray);
+  text-align: justify;
+  transition: all 0.3s ease-out;
 }
 
-.cards li {
+#seguradoras .card h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.7em;
+  color: var(--color-black);
+  transition: opacity 0.3s ease-out;
+  opacity: var(--active);
+}
+
+#seguradoras .card p {
+  transition: opacity 0.3s ease-out;
+  opacity: var(--active);
+}
+
+/* Botões de navegação */
+#seguradoras .nav {
   position: absolute;
-  width: var(--seg-card-width);
-  height: var(--seg-card-height);
-  background: #fff;
-  border-radius: 8px;
+  top: 50%;
+  z-index: 2;
+  font-size: 4rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  cursor: pointer;
+  transform: translateY(-50%);
 }
 
-.cards li img {
-  max-width: 100%;
-  max-height: 100%;
+#seguradoras .nav.left {
+  left: 0;
+  transform: translateX(-100%) translateY(-50%);
 }
 
-.controls {
-  position: absolute;
-  bottom: 10px; left: 50%;
-  transform: translateX(-50%);
-}
-
-.controls button {
-  background: #333;
-  color: #fff;
-  border: none;
-  padding: 6px 12px;
-  margin: 0 4px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.controls button:hover {
-  background: #555;
+#seguradoras .nav.right {
+  right: 0;
+  transform: translateX(100%) translateY(-50%);
 }

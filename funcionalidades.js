@@ -49,46 +49,84 @@ function definirIdade() {
   }
 }
 
+
+// script.js
 document.addEventListener('DOMContentLoaded', () => {
-  const cardsContainer = document.getElementById('cards-seguradoras');
-  if (!cardsContainer) return; // sai se não houver a seção
 
-  const itemsSeg = Array.from(cardsContainer.children);
-  let currentSeg = 0;
-  const totalSeg = itemsSeg.length;
-  const gapSeg = parseInt(
-    getComputedStyle(document.documentElement)
-      .getPropertyValue('--seg-gap')
-  );
+  const section = document.getElementById('seguradoras');
+  const carousel = section.querySelector('.carousel');
+  const leftBtn  = carousel.querySelector('.nav.left');
+  const rightBtn = carousel.querySelector('.nav.right');
 
-  function renderSeg() {
-    itemsSeg.forEach((card, i) => {
-      let offset = i - currentSeg;
-      if (offset < -totalSeg/2) offset += totalSeg;
-      if (offset >  totalSeg/2) offset -= totalSeg;
+  // Fonte de dados das seguradoras
+  const seguradoras = [
+    { titulo: 'Porto Seguro', imagem: 'imagens/logo.png' },
+    { titulo: 'SulAmérica', imagem: 'imagens/logosComNome.png' },
+    { titulo: 'Bradesco Seguros', imagem: 'imagens/logosCom1Nome.png' },
+    { titulo: 'Tokio Marine', imagem: 'imagens/premiacao.jpg' },
+    { titulo: 'Allianz', imagem: 'imagens/equipe.jpg' },
+    { titulo: 'HDI Seguros', imagem: 'imagens/deoniVero.jpg' },
+    { titulo: 'Liberty Seguros', imagem: 'imagens/frenteEmpresa.png' },
+    { titulo: 'Zurich', imagem: 'imagens/logo.png' },
+    { titulo: 'Mapfre', imagem: 'imagens/logosComNome.png' },
+    { titulo: 'Sompo Seguros', imagem: 'imagens/logosCom1Nome.png' },
+    { titulo: 'Azul Seguros', imagem: 'imagens/premiacao.jpg' },
+    { titulo: 'Alfa Seguradora', imagem: 'imagens/equipe.jpg' },
+    { titulo: 'Itaú Seguros', imagem: 'imagens/deoniVero.jpg' },
+    { titulo: 'Suhai Seguradora', imagem: 'imagens/frenteEmpresa.png' }
+  ];
 
-      const x = offset * gapSeg;
-      const isActive = i === currentSeg;
-      const scale = isActive ? 1.2 : 1;
-      const opacity = isActive ? 1 : 0.6;
-      const zIndex = totalSeg - Math.abs(offset);
+  const CARDS = seguradoras.length;
+  const MAX_VISIBILITY = 3;
+  let active = 2;
 
-      card.style.transform = `translateX(${x}px) scale(${scale})`;
-      card.style.opacity   = opacity;
-      card.style.zIndex    = zIndex;
+  // Gera dinamicamente os cards a partir da fonte de dados
+  seguradoras.forEach((seg, i) => {
+    const container = document.createElement('div');
+    container.className = 'card-container';
+
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <img src="${seg.imagem}" alt="Logo ${seg.titulo}" class="logo-seguradora" style="max-width: 100px; display: block; margin: 0 auto 10px;"/>
+      <h2>${seg.titulo}</h2>`;
+
+    container.appendChild(card);
+    carousel.appendChild(container);
+  });
+
+  // Atualiza posição e visibilidade dos cards
+  function updateCarousel() {
+    const containers = carousel.querySelectorAll('.card-container');
+    containers.forEach((el, i) => {
+      const offset    = (active - i) / 3;
+      const absOffset = Math.abs(offset);
+      const direction = Math.sign(active - i);
+
+      el.style.setProperty('--active',      i === active ? 1 : 0);
+      el.style.setProperty('--offset',      offset);
+      el.style.setProperty('--abs-offset',  absOffset);
+      el.style.setProperty('--direction',   direction);
+      el.style.setProperty('--pointer-events', i === active ? 'auto' : 'none');
+      el.style.setProperty('--opacity',       Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1);
+      el.style.setProperty('--display',       Math.abs(active - i) >  MAX_VISIBILITY ? 'none' : 'block');
     });
+
+    leftBtn.style.visibility  = active > 0 ? 'visible' : 'hidden';
+    rightBtn.style.visibility = active < CARDS - 1 ? 'visible' : 'hidden';
   }
 
-  document.getElementById('prevSeg').addEventListener('click', () => {
-    currentSeg = (currentSeg - 1 + totalSeg) % totalSeg;
-    renderSeg();
+  // Eventos de clique
+  leftBtn.addEventListener('click', () => {
+    if (active > 0) active--;
+    updateCarousel();
+  });
+  rightBtn.addEventListener('click', () => {
+    if (active < CARDS - 1) active++;
+    updateCarousel();
   });
 
-  document.getElementById('nextSeg').addEventListener('click', () => {
-    currentSeg = (currentSeg + 1) % totalSeg;
-    renderSeg();
-  });
-
-  // renderiza na primeira exibição
-  renderSeg();
+  // Inicialização
+  updateCarousel();
 });
+
