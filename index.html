@@ -187,7 +187,7 @@
           <p class="contatos-item">Endereço: Av. Brasil, 1494-E - Jardim Europa, Tangará da Serra - MT, 78300-000,
             Brasil</p>
       </div>
-      <div>
+      <div class="contatos-direita">
         <div class="contatos-whatsapp">
           <a class="whatsapp-btn" href="https://wa.me/5565999999999" target="_blank"><span class="wa-ico"></span>
             Cotação</a>
@@ -200,23 +200,41 @@
           <a class="whatsapp-btn" href="https://wa.me/5565999999999" target="_blank"><span class="wa-ico"></span> Ramos
             Elementares</a>
         </div>
-        <div class="contatos-social">
-          <a href="#" class="social-ico" aria-label="LinkedIn"><svg width="22" height="22" fill="none" stroke="#111"
-              stroke-width="2" viewBox="0 0 24 24">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
-              <rect width="4" height="12" x="2" y="9" rx="2" />
-              <circle cx="4" cy="4" r="2" />
-            </svg></a>
-          <a href="#" class="social-ico" aria-label="Facebook"><svg width="22" height="22" fill="none" stroke="#111"
-              stroke-width="2" viewBox="0 0 24 24">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-            </svg></a>
-          <a href="#" class="social-ico" aria-label="Instagram"><svg width="22" height="22" fill="none" stroke="#111"
-              stroke-width="2" viewBox="0 0 24 24">
-              <rect width="20" height="20" x="2" y="2" rx="5" />
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-            </svg></a>
+        <div class="social-links">
+          <div id="instagram" class="social-btn flex-center">
+            <svg class="svgIcon" viewBox="0 0 448 512" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f09433" />
+                  <stop offset="25%" stop-color="#e6683c" />
+                  <stop offset="50%" stop-color="#dc2743" />
+                  <stop offset="75%" stop-color="#cc2366" />
+                  <stop offset="100%" stop-color="#bc1888" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                fill="url(#instagram-gradient)">
+              </path>
+            </svg>
+            <span>@example</span>
+          </div>
+
+          <div id="linkedin" class="social-btn flex-center">
+            <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z">
+              </path>
+            </svg><span>in/example</span>
+          </div>
+
+          <div id="facebook" class="social-btn flex-center">
+            <svg viewBox="0 0 320 512" height="24" width="24" xmlns="http://www.w3.org/2000/svg" aria-label="Facebook">
+              <path fill="#fff" background="#4460a0" border-radius="4px" 
+                d="M279.14 288l14.22-92.66h-88.91V127.91c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.09 44.38-121.09 124.72v70.62H22.89V288h81.38v224h100.2V288z" />
+            </svg>
+            <span>example</span>
+          </div>
         </div>
       </div>
     </div>
