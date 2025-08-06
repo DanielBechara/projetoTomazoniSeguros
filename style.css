@@ -38,9 +38,12 @@
 
 .contatos-item a {
   color: #111;
-  text-decoration: underline;
+  
 }
 
+a{
+  text-decoration: none;
+}
 .contatos-whatsapp {
   display: flex;
   flex-direction: column;
@@ -192,15 +195,13 @@
   fill: #0e76a8;
 }
 
-#github {
-  fill: #333;
-}
-
 .contatos-direita {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 70px;
 }
+
+
 
 /* ========== Faixa de Citação ========== */
 .frase-citacao {
@@ -266,7 +267,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
-  margin-top: 36px;
+  margin-top: 0;
   background: linear-gradient(90deg, #f7f7f7 60%, #e9f0fa 100%);
   border-radius: 22px;
   box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);
@@ -798,25 +799,14 @@ body {
   --card-size: 23rem;
 }
 
-/* * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Montserrat', sans-serif;
-  background-image: linear-gradient(45deg, var(--color-purple), var(--color-pink));
-} */
-
 /* Estilos específicos da seção seguradoras */
 #seguradoras {
   padding: 4rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
-  background-color: #000;
+  color: black;
+  background-color: white;
 }
 
 #seguradoras h1 {
@@ -857,6 +847,11 @@ body {
   color: var(--color-gray);
   text-align: justify;
   transition: all 0.3s ease-out;
+  box-shadow: none;
+}
+
+#seguradoras .card.active {
+  box-shadow: #8b8b8b 0px 7px 20px 0px;
 }
 
 #seguradoras .card h2 {

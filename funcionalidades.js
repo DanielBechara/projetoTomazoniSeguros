@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const CARDS = seguradoras.length;
   const MAX_VISIBILITY = 3;
-  let active = 2;
+  let active = 0;
 
   // Gera dinamicamente os cards a partir da fonte de dados
   seguradoras.forEach((seg, i) => {
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <img src="${seg.imagem}" alt="Logo ${seg.titulo}" class="logo-seguradora" style="max-width: 100px; display: block; margin: 0 auto 10px;"/>
+      <img src="${seg.imagem}" alt="Logo ${seg.titulo}" class="logo-seguradora" style="max-width: 300px; display: block; margin: 0 auto 40px; border-radius: 15px;"/>
       <h2>${seg.titulo}</h2>`;
 
     container.appendChild(card);
@@ -110,6 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
       el.style.setProperty('--pointer-events', i === active ? 'auto' : 'none');
       el.style.setProperty('--opacity',       Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1);
       el.style.setProperty('--display',       Math.abs(active - i) >  MAX_VISIBILITY ? 'none' : 'block');
+
+      // Adiciona/remover classe 'active' no card
+      const card = el.querySelector('.card');
+      if (card) {
+        if (i === active) {
+          card.classList.add('active');
+        } else {
+          card.classList.remove('active');
+        }
+      }
     });
 
     leftBtn.style.visibility  = active > 0 ? 'visible' : 'hidden';
