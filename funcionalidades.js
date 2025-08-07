@@ -52,27 +52,29 @@ function definirIdade() {
 
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
-
   const section = document.getElementById('seguradoras');
   const carousel = section.querySelector('.carousel');
+  // Remover botões de navegação se existirem
   const leftBtn  = carousel.querySelector('.nav.left');
   const rightBtn = carousel.querySelector('.nav.right');
+  if (leftBtn) leftBtn.remove();
+  if (rightBtn) rightBtn.remove();
 
   // Fonte de dados das seguradoras
   const seguradoras = [
-    { titulo: 'Porto Seguro', imagem: 'imagens/logo.png' },
-    { titulo: 'SulAmérica', imagem: 'imagens/logosComNome.png' },
-    { titulo: 'Bradesco Seguros', imagem: 'imagens/logosCom1Nome.png' },
-    { titulo: 'Tokio Marine', imagem: 'imagens/premiacao.jpg' },
-    { titulo: 'Allianz', imagem: 'imagens/equipe.jpg' },
-    { titulo: 'HDI Seguros', imagem: 'imagens/deoniVero.jpg' },
+    { titulo: 'Essor', imagem: 'imagens/logoEssor.svg' },
+    { titulo: 'SulAmérica', imagem: 'imagens/logoSwiss.jpg' },
+    { titulo: 'Bradesco Seguros', imagem: 'imagens/logoBradesco.png' },
+    { titulo: 'Tokio Marine', imagem: 'imagens/logoTokio.jpg' },
+    { titulo: 'Allianz', imagem: 'imagens/logoAllianz.jpg' },
+    { titulo: 'HDI Seguros', imagem: 'imagens/logoHdi.jpg' },
     { titulo: 'Liberty Seguros', imagem: 'imagens/frenteEmpresa.png' },
-    { titulo: 'Zurich', imagem: 'imagens/logo.png' },
-    { titulo: 'Mapfre', imagem: 'imagens/logosComNome.png' },
+    { titulo: 'Zurich', imagem: 'imagens/logoZurich.jpg' },
+    { titulo: 'Mapfre', imagem: 'imagens/logoMapfre.png' },
     { titulo: 'Sompo Seguros', imagem: 'imagens/logosCom1Nome.png' },
-    { titulo: 'Azul Seguros', imagem: 'imagens/premiacao.jpg' },
+    { titulo: 'Azul Seguros', imagem: 'imagens/logoAzul.jpg' },
     { titulo: 'Alfa Seguradora', imagem: 'imagens/equipe.jpg' },
-    { titulo: 'Itaú Seguros', imagem: 'imagens/deoniVero.jpg' },
+    { titulo: 'Itaú Seguros', imagem: 'imagens/logoItau.png' },
     { titulo: 'Suhai Seguradora', imagem: 'imagens/frenteEmpresa.png' }
   ];
 
@@ -88,8 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = document.createElement('div');
     card.className = 'card';
     card.innerHTML = `
-      <img src="${seg.imagem}" alt="Logo ${seg.titulo}" class="logo-seguradora" style="max-width: 300px; display: block; margin: 0 auto 40px; border-radius: 15px;"/>
+      <img src="${seg.imagem}" alt="Logo ${seg.titulo}" class="logo-seguradora" style="max-width: 300px; display: block; margin: 0 auto 50px; border-radius: 15px;"/>
       <h2>${seg.titulo}</h2>`;
+
+    // Impede arrastar imagem
+    setTimeout(() => {
+      const img = card.querySelector('img');
+      if (img) {
+        img.setAttribute('draggable', 'false');
+        img.addEventListener('dragstart', e => e.preventDefault());
+      }
+    }, 0);
 
     container.appendChild(card);
     carousel.appendChild(container);
@@ -121,20 +132,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-
-    leftBtn.style.visibility  = active > 0 ? 'visible' : 'hidden';
-    rightBtn.style.visibility = active < CARDS - 1 ? 'visible' : 'hidden';
   }
 
-  // Eventos de clique
-  leftBtn.addEventListener('click', () => {
-    if (active > 0) active--;
-    updateCarousel();
-  });
-  rightBtn.addEventListener('click', () => {
-    if (active < CARDS - 1) active++;
-    updateCarousel();
-  });
+  // Swiper: mouse/touch events
+  let startX = null;
+  let isDragging = false;
+
+  function onDragStart(e) {
+    isDragging = true;
+    startX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+  }
+
+  function onDragMove(e) {
+    if (!isDragging) return;
+    const x = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+    const diff = x - startX;
+    // threshold de 50px para swipe
+    if (Math.abs(diff) > 50) {
+      if (diff < 0 && active < CARDS - 1) {
+        active++;
+        updateCarousel();
+      } else if (diff > 0 && active > 0) {
+        active--;
+        updateCarousel();
+      }
+      isDragging = false;
+    }
+  }
+
+  function onDragEnd() {
+    isDragging = false;
+  }
+
+  carousel.addEventListener('mousedown', onDragStart);
+  carousel.addEventListener('mousemove', onDragMove);
+  carousel.addEventListener('mouseup', onDragEnd);
+  carousel.addEventListener('mouseleave', onDragEnd);
+  carousel.addEventListener('touchstart', onDragStart);
+  carousel.addEventListener('touchmove', onDragMove);
+  carousel.addEventListener('touchend', onDragEnd);
 
   // Inicialização
   updateCarousel();

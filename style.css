@@ -801,7 +801,7 @@ body {
 
 /* Estilos específicos da seção seguradoras */
 #seguradoras {
-  padding: 4rem 0;
+  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -820,6 +820,12 @@ body {
   height: var(--card-size);
   perspective: 500px;
   transform-style: preserve-3d;
+  user-select: none;
+}
+
+#seguradoras .card-container,
+#seguradoras .card {
+  user-select: none;
 }
 
 /* Cada cartão */
