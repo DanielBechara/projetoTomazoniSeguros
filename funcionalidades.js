@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { titulo: 'HDI Seguros', imagem: 'imagens/Logos/hdi.jpg' },
     { titulo: 'Itaú Seguros', imagem: 'imagens/Logos/logoItau.png' },
     { titulo: 'MAG Seguros', imagem: 'imagens/Logos/mag.png' },
-    { titulo: 'Mapfre', imagem: 'imagens/Logos/mapfre.png' },
+    { titulo: 'Mapfre Seguros', imagem: 'imagens/Logos/mapfre.png' },
     { titulo: 'Metlife', imagem: 'imagens/Logos/metlife.png' },
     { titulo: 'Porto Seguro', imagem: 'imagens/Logos/portoseguro.jpg' },
     { titulo: 'Swiss Re', imagem: 'imagens/Logos/swiss.png' },
