@@ -62,20 +62,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Fonte de dados das seguradoras
   const seguradoras = [
-    { titulo: 'Essor', imagem: 'imagens/logoEssor.svg' },
-    { titulo: 'SulAmérica', imagem: 'imagens/logoSwiss.jpg' },
-    { titulo: 'Bradesco Seguros', imagem: 'imagens/logoBradesco.png' },
-    { titulo: 'Tokio Marine', imagem: 'imagens/logoTokio.jpg' },
-    { titulo: 'Allianz', imagem: 'imagens/logoAllianz.jpg' },
-    { titulo: 'HDI Seguros', imagem: 'imagens/logoHdi.jpg' },
-    { titulo: 'Liberty Seguros', imagem: 'imagens/frenteEmpresa.png' },
-    { titulo: 'Zurich', imagem: 'imagens/logoZurich.jpg' },
-    { titulo: 'Mapfre', imagem: 'imagens/logoMapfre.png' },
-    { titulo: 'Sompo Seguros', imagem: 'imagens/logosCom1Nome.png' },
-    { titulo: 'Azul Seguros', imagem: 'imagens/logoAzul.jpg' },
-    { titulo: 'Alfa Seguradora', imagem: 'imagens/equipe.jpg' },
-    { titulo: 'Itaú Seguros', imagem: 'imagens/logoItau.png' },
-    { titulo: 'Suhai Seguradora', imagem: 'imagens/frenteEmpresa.png' }
+    { titulo: 'Aliro', imagem: 'imagens/Logos/aliro.png' },
+    { titulo: 'Allianz', imagem: 'imagens/Logos/allianz.jpg' },
+    { titulo: 'Azul', imagem: 'imagens/Logos/azul.jpg' },
+    { titulo: 'Bradesco Seguros', imagem: 'imagens/Logos/logoBradesco.png' },
+    { titulo: 'Essor', imagem: 'imagens/Logos/essor.png' },
+    { titulo: 'Fairfax Seguros', imagem: 'imagens/Logos/logoFf.png' },
+    { titulo: 'HDI Seguros', imagem: 'imagens/Logos/hdi.jpg' },
+    { titulo: 'Itaú Seguros', imagem: 'imagens/Logos/logoItau.png' },
+    { titulo: 'MAG Seguros', imagem: 'imagens/Logos/mag.png' },
+    { titulo: 'Mapfre', imagem: 'imagens/Logos/mapfre.png' },
+    { titulo: 'Metlife', imagem: 'imagens/Logos/metlife.png' },
+    { titulo: 'Porto Seguro', imagem: 'imagens/Logos/portoseguro.jpg' },
+    { titulo: 'Swiss Re', imagem: 'imagens/Logos/swiss.png' },
+    { titulo: 'Tokio Marine', imagem: 'imagens/Logos/logoTokio.jpg' },
+    { titulo: 'Yelum', imagem: 'imagens/Logos/yelum.jpg' },
+    { titulo: 'Zurich', imagem: 'imagens/Logos/zurich.png' }
   ];
 
   const CARDS = seguradoras.length;
