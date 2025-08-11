@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <title>Tomazoni Seguros — Mobile</title>
+  <link rel="icon" type="image/png" href="imagens/logo.png" />
+  <link rel="canonical" href="index.html" />
+
+  <!-- Fonts iguais às do desktop -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="mobile.css" />
+
+  <script>
+    // Se abrir a versão mobile em tela grande, manda para a desktop
+    (function () {
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        var dest = 'index.html' + location.search + location.hash;
+        location.replace(dest);
+      }
+    })();
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0;url=index.html">
+  </noscript>
+</head>
+<body>
+  <!-- Header compacto com hambúrguer -->
+  <header class="m-header" id="topo">
+    <button class="m-burger" id="burger" aria-label="Abrir menu" aria-controls="m-nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <img src="./imagens/logosCom1Nome.png" alt="Tomazoni Seguros" class="m-logo" />
+
+    <a class="m-call" href="tel:+5565999876431" aria-label="Ligar">
+      Ligar
+    </a>
+  </header>
+
+  <!-- Navegação lateral -->
+  <nav id="m-nav" class="m-nav" hidden>
+    <a href="#sobre"   class="m-nav__link">Sobre</a>
+    <a href="#servicos" class="m-nav__link">Serviços</a>
+    <a href="#seguradoras" class="m-nav__link">Seguradoras</a>
+    <a href="#contatos" class="m-nav__link">Contatos</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="m-hero">
+    <img src="./imagens/frenteEmpresa.png" alt="Entrada da Tomazoni Seguros" class="m-hero__bg" loading="eager" />
+    <div class="m-hero__content">
+      <h1><span id="anos"></span> anos de proteção</h1>
+      <p>Atendimento em todo o Brasil, 20+ ramos, equipe especializada para seu patrimônio e sua família.</p>
+      <div class="m-hero__cta">
+        <a class="wa-btn" href="https://wa.me/556584633257" target="_blank" rel="noopener">Cotação</a>
+        <a class="wa-btn wa-btn--alt" href="https://wa.me/556599870094" target="_blank" rel="noopener">Plantão</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section id="sobre" class="m-section">
+    <h2 class="m-title">Nossa História</h2>
+    <p class="m-text">
+      Em março de 2000, Deoni e Veronice iniciaram a Tomazoni Seguros em Tangará da Serra. Hoje temos sede própria e equipe de 13 pessoas,
+      atendendo todo o Brasil em mais de 20 ramos: automóvel, equipamentos, patrimonial, vida e previdência.
+    </p>
+
+    <div class="m-card m-card--image">
+      <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni" loading="lazy" />
+    </div>
+
+    <h3 class="m-subtitle">Equipe</h3>
+    <p class="m-text">
+      Profissionais capacitados, atendimento consultivo e soluções sob medida. Do sinistro ao acompanhamento de parcelas,
+      a gente cuida de tudo para sua tranquilidade.
+    </p>
+
+    <div class="m-card m-card--image">
+      <img src="./imagens/equipe.jpg" alt="Equipe Tomazoni Seguros" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Serviços (acordeão) -->
+  <section id="servicos" class="m-section">
+    <h2 class="m-title">Serviços</h2>
+    <p class="m-text">Disponíveis para todo o Brasil.</p>
+
+    <details class="m-acc">
+      <summary class="m-acc__title">Proteção para Veículos e Transporte</summary>
+      <ul class="m-list">
+        <li>Seguro Auto</li>
+        <li>Seguro de Moto</li>
+        <li>Seguro de Caminhão</li>
+        <li>Seguro Frotista</li>
+        <li>Seguro Transporte</li>
+        <li>Seguro de Aeronave</li>
+        <li>Seguro de Aeroporto</li>
+      </ul>
+    </details>
+
+    <details class="m-acc">
+      <summary class="m-acc__title">Seguros para Pessoas</summary>
+      <ul class="m-list">
+        <li>Seguro Saúde</li>
+        <li>Seguro de Vida</li>
+        <li>Seguro Sucessório</li>
+        <li>Previdência Privada</li>
+        <li>Responsabilidade Civil</li>
+      </ul>
+    </details>
+
+    <details class="m-acc">
+      <summary class="m-acc__title">Proteção Patrimonial</summary>
+      <ul class="m-list">
+        <li>Seguro Empresarial</li>
+        <li>Seguro Residencial</li>
+        <li>Seguro de Condomínio</li>
+        <li>Seguro de Propriedade Rural</li>
+        <li>Seguro de Lavoura</li>
+      </ul>
+    </details>
+
+    <details class="m-acc">
+      <summary class="m-acc__title">Proteção para Equipamentos</summary>
+      <ul class="m-list">
+        <li>Equipamentos Agrícolas</li>
+        <li>Equipamentos de Construção Civil</li>
+        <li>Equipamentos de Saúde</li>
+        <li>Equipamentos Portáteis</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Diferenciais (sem parallax pesado no mobile) -->
+  <section class="m-section">
+    <h2 class="m-title">Por que Tomazoni Seguros</h2>
+    <div class="m-highlight">
+      <p class="m-text">
+        Nomeada entre as maiores corretoras do MT (Sincor-MT). Categoria Private (Allianz). Premiação entre as maiores na MetLife.
+        Entre os 2% das corretoras de vida no mundo (MDRT 2025).
+      </p>
+    </div>
+  </section>
+
+  <!-- Seguradoras (grade rolável) -->
+  <section id="seguradoras" class="m-section">
+    <h2 class="m-title">Nossas Seguradoras Parceiras</h2>
+    <div class="logo-grid">
+      <!-- mesmas logos do desktop -->
+      <img src="imagens/Logos/aliro.png" alt="Aliro" loading="lazy" />
+      <img src="imagens/Logos/allianz.jpg" alt="Allianz" loading="lazy" />
+      <img src="imagens/Logos/azul.jpg" alt="Azul" loading="lazy" />
+      <img src="imagens/Logos/logoBradesco.png" alt="Bradesco Seguros" loading="lazy" />
+      <img src="imagens/Logos/essor.png" alt="Essor" loading="lazy" />
+      <img src="imagens/Logos/logoFf.png" alt="Fairfax Seguros" loading="lazy" />
+      <img src="imagens/Logos/hdi.jpg" alt="HDI Seguros" loading="lazy" />
+      <img src="imagens/Logos/logoItau.png" alt="Itaú Seguros" loading="lazy" />
+      <img src="imagens/Logos/mag.png" alt="MAG Seguros" loading="lazy" />
+      <img src="imagens/Logos/mapfre.png" alt="Mapfre Seguros" loading="lazy" />
+      <img src="imagens/Logos/metlife.png" alt="Metlife" loading="lazy" />
+      <img src="imagens/Logos/portoseguro.jpg" alt="Porto Seguro" loading="lazy" />
+      <img src="imagens/Logos/swiss.png" alt="Swiss Re" loading="lazy" />
+      <img src="imagens/Logos/logoTokio.jpg" alt="Tokio Marine" loading="lazy" />
+      <img src="imagens/Logos/yelum.jpg" alt="Yelum" loading="lazy" />
+      <img src="imagens/Logos/zurich.png" alt="Zurich" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- Citação -->
+  <section class="m-quote">
+    <blockquote>
+      <p>
+        “Se me fosse possível, escreveria a palavra SEGUROS no umbral de cada porta...
+        ...livrar as famílias de catástrofes irreparáveis.”
+      </p>
+      <footer>Winston Churchill — 1º Ministro, década de 40</footer>
+    </blockquote>
+  </section>
+
+  <!-- Contatos -->
+  <section id="contatos" class="m-section">
+    <h2 class="m-title">Contatos</h2>
+
+    <div class="contact-cards">
+      <a class="contact-card" href="https://wa.me/556584633257" target="_blank" rel="noopener">
+        <span class="cc-title">Cotação</span>
+        <span class="cc-sub">(65) 8463-3257</span>
+      </a>
+
+      <a class="contact-card" href="https://wa.me/556599870094" target="_blank" rel="noopener">
+        <span class="cc-title">Plantão</span>
+        <span class="cc-sub">(65) 99870-0094</span>
+      </a>
+
+      <a class="contact-card" href="https://wa.me/556596025782" target="_blank" rel="noopener">
+        <span class="cc-title">Vida/Previdência</span>
+        <span class="cc-sub">(65) 9602-5782</span>
+      </a>
+
+      <a class="contact-card" href="mailto:corretora@tomazoniseguros.com.br">
+        <span class="cc-title">E-mail</span>
+        <span class="cc-sub">corretora@tomazoniseguros.com.br</span>
+      </a>
+
+      <a class="contact-card" href="https://www.google.com/maps/search/?api=1&query=Av.+Brasil,+1494-E+-+Jardim+Europa,+Tangar%C3%A1+da+Serra+-+MT,+78300-000" target="_blank" rel="noopener">
+        <span class="cc-title">Endereço</span>
+        <span class="cc-sub">Av. Brasil, 1494-E, Tangará da Serra - MT</span>
+      </a>
+    </div>
+
+    <div class="social-row">
+      <a class="social" href="https://www.instagram.com/tomazonicorretora?igsh=MWZjemQxc2VuYjN5eA==" target="_blank" rel="noopener">Instagram</a>
+      <a class="social" href="https://www.linkedin.com/company/tomazoni-corretora-de-seguros/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social" href="https://www.facebook.com/tomazzoniseguros/" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </section>
+
+  <footer class="m-footer">
+    © <span id="anoAtual"></span> Tomazoni Seguros
+  </footer>
+
+  <script>
+    // idade (mesmo cálculo do desktop)
+    (function definirIdade(){
+      var dataFundacao = new Date("2000-03-01");
+      var hoje = new Date();
+      var anos = hoje.getFullYear() - dataFundacao.getFullYear();
+      var m = hoje.getMonth() - dataFundacao.getMonth();
+      if (m < 0 || (m === 0 && hoje.getDate() < dataFundacao.getDate())) anos--;
+      var el = document.getElementById('anos');
+      if (el) el.textContent = anos;
+      var anoAtual = document.getElementById('anoAtual');
+      if (anoAtual) anoAtual.textContent = hoje.getFullYear();
+    })();
+
+    // menu hambúrguer
+    (function menu(){
+      var burger = document.getElementById('burger');
+      var nav = document.getElementById('m-nav');
+      function toggle(){
+        var open = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', String(!open));
+        if (!open) { nav.removeAttribute('hidden'); document.body.classList.add('nav-open'); }
+        else { nav.setAttribute('hidden',''); document.body.classList.remove('nav-open'); }
+      }
+      burger.addEventListener('click', toggle);
+      nav.addEventListener('click', function(e){
+        if (e.target.classList.contains('m-nav__link')) toggle();
+      });
+    })();
+
+    // scroll suave
+    (function smoothScroll(){
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          var id = a.getAttribute('href').slice(1);
+          var el = document.getElementById(id);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

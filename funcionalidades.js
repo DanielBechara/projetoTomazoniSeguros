@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const section = document.getElementById('seguradoras');
   const carousel = section.querySelector('.carousel');
   // Remover botões de navegação se existirem
-  const leftBtn  = carousel.querySelector('.nav.left');
+  const leftBtn = carousel.querySelector('.nav.left');
   const rightBtn = carousel.querySelector('.nav.right');
   if (leftBtn) leftBtn.remove();
   if (rightBtn) rightBtn.remove();
@@ -112,17 +112,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateCarousel() {
     const containers = carousel.querySelectorAll('.card-container');
     containers.forEach((el, i) => {
-      const offset    = (active - i) / 3;
+      const offset = (active - i) / 3;
       const absOffset = Math.abs(offset);
       const direction = Math.sign(active - i);
 
-      el.style.setProperty('--active',      i === active ? 1 : 0);
-      el.style.setProperty('--offset',      offset);
-      el.style.setProperty('--abs-offset',  absOffset);
-      el.style.setProperty('--direction',   direction);
+      el.style.setProperty('--active', i === active ? 1 : 0);
+      el.style.setProperty('--offset', offset);
+      el.style.setProperty('--abs-offset', absOffset);
+      el.style.setProperty('--direction', direction);
       el.style.setProperty('--pointer-events', i === active ? 'auto' : 'none');
-      el.style.setProperty('--opacity',       Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1);
-      el.style.setProperty('--display',       Math.abs(active - i) >  MAX_VISIBILITY ? 'none' : 'block');
+      el.style.setProperty('--opacity', Math.abs(active - i) >= MAX_VISIBILITY ? 0 : 1);
+      el.style.setProperty('--display', Math.abs(active - i) > MAX_VISIBILITY ? 'none' : 'block');
 
       // Adiciona/remover classe 'active' no card
       const card = el.querySelector('.card');
@@ -178,3 +178,13 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCarousel();
 });
 
+(function () {
+  // breakpoint para mobile
+  var isMobile = window.matchMedia('(max-width: 900px)').matches;
+  var pathname = (location.pathname || '').toLowerCase();
+  // evita loop e só redireciona se não estiver já na versão mobile
+  if (isMobile && pathname.indexOf('mobile.html') === -1) {
+    var dest = 'mobile.html' + location.search + location.hash;
+    location.replace(dest);
+  }
+})();

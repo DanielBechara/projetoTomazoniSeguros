@@ -1,0 +1,152 @@
+:root{
+  --bg:#ffffff;
+  --ink:#0d0d0d;
+  --muted:#5b5b5b;
+  --brand:#1a3a5d;
+  --brand-2:#3a7bd5;
+  --card:#f7f7f7;
+  --wa:#51ce5f;
+  --radius:16px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.5;
+}
+
+/* Header */
+.m-header{
+  position:sticky;top:0;z-index:50;
+  height:56px;background:#fff;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 12px;border-bottom:1px solid #eee;
+}
+.m-logo{height:36px;width:auto}
+.m-call{
+  font-size:.9rem;text-decoration:none;color:#fff;background:var(--brand-2);
+  padding:.5rem .8rem;border-radius:999px
+}
+
+/* Burger */
+.m-burger{
+  width:40px;height:40px;display:inline-flex;flex-direction:column;justify-content:center;gap:4px;
+  border:0;background:transparent;padding:0;cursor:pointer
+}
+.m-burger span{display:block;height:2px;background:#111;border-radius:2px;width:22px}
+
+/* Drawer nav */
+.m-nav{
+  position:fixed;inset:56px 0 auto 0; /* abaixo do header */
+  background:#fff;border-bottom:1px solid #eee;
+  display:grid;grid-auto-rows:minmax(44px,auto);
+  padding:8px 12px 12px 12px;
+}
+.m-nav__link{
+  display:flex;align-items:center;gap:10px;
+  border-radius:12px;padding:12px;text-decoration:none;color:#111;font-weight:600;
+}
+.m-nav__link:active{background:#f2f2f2}
+.nav-open{overflow:hidden}
+
+/* Hero */
+.m-hero{position:relative;isolation:isolate}
+.m-hero__bg{
+  width:100%;height:46vh;object-fit:cover;display:block;
+  -webkit-mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 80%, transparent 100%);
+}
+.m-hero__content{
+  margin-top:-18vh;padding:0 16px 12px;
+}
+.m-hero__content h1{
+  font-size:1.8rem;margin:0 0 6px;font-weight:800;color:#000;
+}
+.m-hero__content p{margin:0 0 12px;color:#222}
+.m-hero__cta{display:flex;gap:10px}
+.wa-btn{
+  flex:1;text-align:center;text-decoration:none;font-weight:700;
+  background:var(--wa);color:#fff;padding:12px;border-radius:12px
+}
+.wa-btn--alt{background:#111}
+
+/* Seções base */
+.m-section{padding:22px 16px}
+.m-title{font-size:1.35rem;margin:0 0 10px;font-weight:800;color:#000;letter-spacing:.02em}
+.m-subtitle{font-size:1.05rem;margin:18px 0 8px;font-weight:700}
+.m-text{font-size:1rem;color:#222;margin:0 0 10px}
+
+/* Cards de imagem */
+.m-card{background:#fff;border:1px solid #eee;border-radius:var(--radius);padding:10px}
+.m-card--image img{width:100%;height:auto;border-radius:12px;display:block}
+
+/* Accordion */
+.m-acc{
+  border:1px solid #e8e8e8;border-radius:14px;background:#fff;margin:10px 0;overflow:hidden
+}
+.m-acc > summary{
+  list-style:none;cursor:pointer;padding:14px 14px;font-weight:700;color:#0f172a
+}
+.m-acc[open] > summary{border-bottom:1px solid #f0f0f0}
+.m-acc__title::-webkit-details-marker{display:none}
+.m-list{padding:10px 16px 16px 24px;margin:0}
+.m-list li{margin:6px 0}
+
+/* Highlight (diferenciais) */
+.m-highlight{
+  background:linear-gradient(180deg,#0b1020, #1a2b47);
+  color:#fff;border-radius:16px;padding:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12)
+}
+
+/* Logos grid */
+.logo-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+}
+.logo-grid img{
+  width:100%;aspect-ratio:4/3;object-fit:contain;
+  background:#fff;border:1px solid #eee;border-radius:12px;padding:10px
+}
+
+/* Citação */
+.m-quote{
+  background:#000;color:#fff;text-align:center;padding:24px 12px
+}
+.m-quote blockquote{margin:0}
+.m-quote p{font-style:italic;margin:0 0 8px}
+.m-quote footer{text-transform:uppercase;font-weight:700;font-size:.9rem;letter-spacing:.12em}
+
+/* Contatos */
+.contact-cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:10px
+}
+.contact-card{
+  display:flex;flex-direction:column;gap:2px;align-items:flex-start;
+  text-decoration:none;background:#fff;border:1px solid #eee;border-radius:14px;padding:12px;
+  color:#111
+}
+.cc-title{font-weight:800}
+.cc-sub{font-size:.95rem;color:#333}
+
+.social-row{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.social{
+  text-decoration:none;border:1px solid #ddd;background:#fff;color:#111;
+  padding:8px 12px;border-radius:999px;font-weight:700
+}
+
+/* Rodapé */
+.m-footer{
+  text-align:center;color:#444;font-size:.95rem;padding:18px
+}
+
+/* Safes */
+@media (min-width: 421px){
+  .logo-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (min-width: 541px){
+  .logo-grid{grid-template-columns:repeat(5,1fr)}
+  .contact-cards{grid-template-columns:repeat(3,1fr)}
+}
