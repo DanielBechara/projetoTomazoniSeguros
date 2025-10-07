@@ -38,12 +38,13 @@
 
 .contatos-item a {
   color: #111;
-  
+
 }
 
-a{
+a {
   text-decoration: none;
 }
+
 .contatos-whatsapp {
   display: flex;
   flex-direction: column;
@@ -172,23 +173,19 @@ a{
 }
 
 #instagram svg {
-  fill: -webkit-linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  fill: linear-gradient(
-    45deg,
-    #f09433 0%,
-    #e6683c 25%,
-    #dc2743 50%,
-    #cc2366 75%,
-    #bc1888 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  fill: -webkit-linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  fill: linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
 }
 
 #linkedin svg {
@@ -881,7 +878,7 @@ body {
   top: 50%;
   z-index: 2;
   font-size: 4rem;
-  color: white;
+  color: #3a7bd5;
   background: none;
   border: none;
   cursor: pointer;
@@ -889,15 +886,35 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition:
+    color 0.25s cubic-bezier(.4,1.6,.6,1),
+    background 0.25s cubic-bezier(.4,1.6,.6,1),
+    box-shadow 0.25s cubic-bezier(.4,1.6,.6,1),
+    transform 0.18s cubic-bezier(.4,1.6,.6,1);
+  outline: none;
+  /* Alinhamento vertical central */
   transform: translateY(-50%);
 }
 
 #seguradoras .nav.left {
-  left: 0;
-  transform: translateX(-100%) translateY(-50%);
+  left: -60px; /* Ajuste conforme necessário para afastar da borda do card */
 }
 
 #seguradoras .nav.right {
-  right: 0;
-  transform: translateX(100%) translateY(-50%);
+  right: -60px; /* Ajuste conforme necessário para afastar da borda do card */
+}
+
+/* Efeitos de hover e active permanecem iguais */
+#seguradoras .nav:hover {
+  color: #3a7bd5;
+  background: rgba(58,123,213,0.08);
+  box-shadow: 0 4px 16px 0 rgba(58,123,213,0.10);
+  transform: scale(1.08) translateY(-50%);
+}
+
+#seguradoras .nav:active {
+  color: #002258;
+  background: rgba(58,123,213,0.18);
+  box-shadow: 0 2px 8px 0 rgba(58,123,213,0.13);
+  transform: scale(0.96) translateY(-50%);
 }

@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const section = document.getElementById('seguradoras');
   const carousel = section.querySelector('.carousel');
   // Remover botões de navegação se existirem
-  const leftBtn = carousel.querySelector('.nav.left');
-  const rightBtn = carousel.querySelector('.nav.right');
-  if (leftBtn) leftBtn.remove();
-  if (rightBtn) rightBtn.remove();
+  // const leftBtn = carousel.querySelector('.nav.left');
+  // const rightBtn = carousel.querySelector('.nav.right');
+  // if (leftBtn) leftBtn.remove();
+  // if (rightBtn) rightBtn.remove();
 
   // Fonte de dados das seguradoras
   const seguradoras = [
@@ -176,6 +176,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Inicialização
   updateCarousel();
+
+  // Torna os botões de navegação funcionais
+  const leftBtn = carousel.querySelector('.nav.left');
+  const rightBtn = carousel.querySelector('.nav.right');
+  if (leftBtn) {
+    leftBtn.addEventListener('click', () => {
+      if (active > 0) {
+        active--;
+        updateCarousel();
+      }
+    });
+  }
+  if (rightBtn) {
+    rightBtn.addEventListener('click', () => {
+      if (active < CARDS - 1) {
+        active++;
+        updateCarousel();
+      }
+    });
+  }
 });
 
 (function () {

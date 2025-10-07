@@ -7,6 +7,7 @@
   <title>Tomazoni Seguros</title>
   <link rel="icon" type="image/png" href="imagens/logo.png">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -24,7 +25,7 @@
       <button type="button" class="btn" onclick="scrollParaElementoPorId('contatos')">Contatar</button>
     </div>
   </div>
-  <img src="./imagens/frenteEmpresa.png" class="imgFundo" alt="entradaEmpresa">
+  <img src="./imagens/frenteEmpresa.jpg" class="imgFundo" alt="entradaEmpresa">
   <section id="sobre" class="sobre">
     <section id="historia">
       <div class="sobre-conteudo">
@@ -39,7 +40,7 @@
             patrimonial, vida e previdência.
           </p>
         </div>
-        <div class="sobre-imagem fade-in-element from-right">
+        <div class="sobre-imagem fade-in-element from-right" style="height: 600px; overflow: hidden; border-radius: 8px;">
           <img src="./imagens/deoniVero.jpg" alt="Deoni e Veronice Tomazoni em frente à sede">
         </div>
       </div>
@@ -161,8 +162,8 @@
     <h2 class="titulo-grande">Nossas Seguradoras Parceiras</h2>
 
     <div class="carousel">
-      <button class="nav left">&lt;</button>
-      <button class="nav right">&gt;</button>
+      <button class="nav left"><i class="fas fa-play" style="transform: rotate(180deg); font-size: 30px"></i></button>
+      <button class="nav right"><i class="fas fa-play" style="font-size: 30px"></i></button>
       <!-- os cards serão injetados aqui pelo JS -->
     </div>
   </section>
@@ -174,7 +175,7 @@
         irreparáveis."
       </p>
       <footer class="citacao-autor">
-        WINSTON CHURCHILL 1º Ministro Inglês da década de 40
+        WINSTON CHURCHILL
       </footer>
     </blockquote>
   </section>
