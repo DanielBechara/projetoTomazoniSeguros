@@ -904,6 +904,20 @@ body {
   right: -60px; /* Ajuste conforme necessário para afastar da borda do card */
 }
 
+#seguradoras .nav.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.2s;
+}
+
+#seguradoras .nav.appear {
+  opacity: 1;
+  pointer-events: visible;
+  visibility: visible;
+  transition: opacity 0.2s;
+}
+
 /* Efeitos de hover e active permanecem iguais */
 #seguradoras .nav:hover {
   color: #3a7bd5;

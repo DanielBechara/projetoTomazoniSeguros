@@ -64,11 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const seguradoras = [
     { titulo: 'Aliro', imagem: 'imagens/Logos/aliro.png' },
     { titulo: 'Allianz', imagem: 'imagens/Logos/allianz.jpg' },
+    { titulo: 'Azos', imagem: 'imagens/Logos/azos.png' },
     { titulo: 'Azul', imagem: 'imagens/Logos/azul.jpg' },
     { titulo: 'Bradesco Seguros', imagem: 'imagens/Logos/logoBradesco.png' },
     { titulo: 'Essor', imagem: 'imagens/Logos/essor.png' },
     { titulo: 'Fairfax Seguros', imagem: 'imagens/Logos/logoFf.png' },
     { titulo: 'HDI Seguros', imagem: 'imagens/Logos/hdi.jpg' },
+    { titulo: 'Icatu', imagem: 'imagens/Logos/icatu.jpg' },
     { titulo: 'Itaú Seguros', imagem: 'imagens/Logos/logoItau.png' },
     { titulo: 'MAG Seguros', imagem: 'imagens/Logos/mag.png' },
     { titulo: 'Mapfre Seguros', imagem: 'imagens/Logos/mapfre.png' },
@@ -181,6 +183,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const leftBtn = carousel.querySelector('.nav.left');
   const rightBtn = carousel.querySelector('.nav.right');
   if (leftBtn) {
+    // if (active === 0) {
+    //   leftBtn.classList.add('hidden');
+    // } else {
+    //   leftBtn.classList.remove('hidden');
+    // }
     leftBtn.addEventListener('click', () => {
       if (active > 0) {
         active--;
