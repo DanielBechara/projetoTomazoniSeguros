@@ -932,3 +932,28 @@ body {
   box-shadow: 0 2px 8px 0 rgba(58,123,213,0.13);
   transform: scale(0.96) translateY(-50%);
 }
+
+/* Seção equipe com fundo preto */
+#equipe {
+  background-color: #000; /* fundo preto */
+  color: #fff;            /* texto branco */
+  padding: 40px 20px;
+}
+
+/* Ajustes internos para garantir legibilidade */
+#equipe .equipe-texto {
+  border-left: 1px solid #fff;
+  padding-left: 40px;
+  color: #fff;
+}
+
+#equipe .equipe-texto h2,
+#equipe .equipe-texto p {
+  color: #fff;
+}
+
+/* Mantém a imagem com boa visibilidade (ajuste se necessário) */
+#equipe .sobre-imagem img {
+  filter: none;
+  border-radius: 8px;
+}
